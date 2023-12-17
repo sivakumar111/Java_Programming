@@ -13,7 +13,8 @@
 10.	Take a number and check it is a palindrome or not?
 11.	Find a Factorial for a given number?
 12.	Find the given number was Armstrong or not?
-13.	Generate a random numbers between a 1 to 100?  
+13.	Generate a random numbers between a 1 to 100?
+     (Math.random()=mix-min+1)+min)
 14.	Print an ASCII Value in java?
 15.	Print a Fibonacci number at a particular index?
 16.	Find the Armstrong Number between two numbers?
