@@ -1,22 +1,14 @@
 
                                               Programs
 
-1.	Write a Hello World Program?
-2.	Take a two numbers and print a sum of a both numbers?
-3.	Take a number as input from a user and print the multiplication table for it?
-4.	Take a two numbers as input from a user and print the their HCF or GCD and LCM(Two program HCF and LCM)?
-5.	Keep taking numbers as input till the user enters ‘x’, after that print sum of all.(Hint: while)
-6.	Take two numbers as a input and print which is largest number or smallest number? (Using Integer.MIN_VALUE or Integer.MAX_VALUE)
-7.	To find whether the given string is palindrome or not? 
-8.	Find a fibonacci series in java.
-9.	Find the given number was prime or not?
-10.	Take a number and check it is a palindrome or not?
-11.	Find a Factorial for a given number?
-12.	Find the given number was Armstrong or not?
-13.	Generate a random numbers between a 1 to 100?
-     (Math.random()=mix-min+1)+min)
-14.	Print an ASCII Value in java?
-15.	Print a Fibonacci number at a particular index?
-16.	Find the Armstrong Number between two numbers?
-17.	Take as inputs of a number from a user and print all a factors of that number?
-18.	Take as inputs of a number from a user and print the largest number from all?
+1.	Write a Hello World Program
+2.	Fibonacci Series in Java
+3.  Prime Number Program in Java
+4.  Palindrome Program in Java
+5.  Factorial Program in Java
+6.  Armstrong Number in Java
+7.  How to Generate Random Number in Java
+8.  How to Print Pattern in Java
+9.  How to Compare Two Objects in Java
+10. How to Create Object in Java
+11. How to Print ASCII Value in Java
