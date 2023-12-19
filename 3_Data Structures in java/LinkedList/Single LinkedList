@@ -1,1 +1,141 @@
+public class LinkedList{
+    Node head;
+    Node tail;
+
+    int size;
+    LinkedList(){
+        this.size=0;
+    }
+
+
+    //Elements are add at a first position
+    public void addFirst(int data){
+        Node newNode = new Node(data);
+        newNode.next=head;
+        head=newNode;
+
+        if(tail==null){
+            tail=head;
+        }
+        size+=1;
+    }
+
+    //Element are add at last position
+    public void addLast(int data){
+        if(tail==null){
+            addFirst(data);
+            return;
+        }
+        Node newNode = new Node(data);
+        tail.next=newNode;
+        newNode = tail;
+
+        size+=1;
+    }
+
+    //Insert in a particular position
+    public void InsertMid(int data, int index){
+        if(index==0){
+            addFirst(data);
+            return;
+        }
+
+        if(index==size){
+            addLast(data);
+            return;
+        }
+
+        Node temp=head;
+        //We are start's from a 1 becaues head =temp (It is node number one)(The Index number was start's from a zero(0))
+        for(int i=1; i<index; i++){
+            temp=temp.next;
+        }
+
+        Node newNode = new Node(data, temp.next);
+        temp.next=newNode;
+        size+=1;
+    }
+
+    //Element are Deleted at First
+    public void deleteFirst(){
+        head = head.next;
+        if(head==null){
+            tail=null;
+        }
+        size--;
+    }
+
+    //Element are Deleted at last
+    public void deleteLast(){
+        if(size<=1){
+            deleteFirst();
+            return;
+        }
+
+        Node secondLast = get(size-2);
+        tail=secondLast;
+        tail.next=null;
+        size-=1;
+    }
+
+    //Element was delete at perticular position
+    public void deleteMid(int index){
+        if(index==0){
+            deleteFirst();
+            return;
+        }
+        if(index==size-1){
+            deleteLast();
+            return;
+        }
+        Node prev = get(index-1);
+        prev.next = prev.next.next;
+        size--;
+    }
+
+    //Searching for a index 
+    public Node get(int index){
+        Node node = head;
+        for(int i=0; i<index; i++){
+            node=node.next;
+        }
+        return node;
+    }
+
+    //Display the elements
+    public void display(){
+        Node temp = head;
+            while(temp!=null){
+                System.out.print(temp.data+"->");
+                temp=temp.next;
+            }
+            System.out.println("End");
+    }
+    
+    //Creating a Node
+    class Node{
+        int data;
+        Node next;
+
+        Node(int data){
+            this.data=data;
+        }
+        Node(int data, Node next){
+            this.data=data;
+            this.next=next;
+        }
+    }
+    
+    public static void main(String[] args){
+        LinkedList obj = new LinkedList();
+        obj.addFirst(10);
+        obj.addFirst(20);
+        obj.addFirst(30);
+        obj.addFirst(40);
+        obj.display();
+        obj.deleteMid(3);
+        obj.display();
+    }
+}
+
 
