@@ -1,0 +1,23 @@
+//Find the Factorial for a given number
+import java.util.*;
+public class FactorialNumber {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number: ");
+        int num = sc.nextInt();
+        System.out.println(logic(num));
+        sc.close();
+    }
+    public static int logic(int num){
+        int fv = 1;
+        for(int i=1; i<=num; i++){
+            fv=fv*i;
+        }
+        return fv;
+    }
+}
+
+/*Output
+ * Enter the number: 5
+ *  120
+ */
