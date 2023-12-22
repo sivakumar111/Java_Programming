@@ -1,0 +1,25 @@
+//Generate a random number in between numbers
+//Formula: Math.random() * (max - min + 1) + min  
+import java.util.*;
+public class RandomNumber {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        // System.out.println(Math.random());
+        System.out.print("Enter the Max number:");
+        int max = sc.nextInt();
+        System.out.print("Enter the Min number:");
+        int min = sc.nextInt();
+        System.out.println(logic(max, min));
+        sc.close();
+    }
+    public static double logic(int max, int min){
+        double Ans =0;
+        Ans = Math.random()*(max-min-1)+min;
+        return Ans;
+    }
+}
+/*
+  *  Enter the Max number:1
+  *  Enter the Min number:100
+  *  88.31187372674732
+*/
