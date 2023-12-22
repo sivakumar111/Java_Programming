@@ -1,0 +1,17 @@
+//American Standard Code for Information Interchange
+import java.util.*;
+public class ASCII {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number: ");
+        char word = sc.next().charAt(0);
+        int ans = word;
+        System.out.print(ans);
+        sc.close();
+    }
+}
+
+/*Output:
+ * Enter the number: A
+ * 65
+ */
