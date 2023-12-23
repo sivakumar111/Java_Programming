@@ -1,0 +1,26 @@
+//Reverse a number == Palindrom Number
+import java.util.*;
+public class Reverse{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number :");
+        int num = sc.nextInt();
+        System.out.println("After a reverse a number :"+logic(num));
+        sc.close();
+    }
+    public static int logic(int num){
+        System.out.println("The number before reverse :"+num);
+        int sum = 0;
+        while(num>0){
+            int rem = num%10;
+            sum = (sum*10)+rem;
+            num = num/10;
+        }
+        return sum;
+    }
+}
+
+/*Output:
+*  Enter the number :123456
+*  The number before reverse :123456
+*  After a reverse a number :654321 */
