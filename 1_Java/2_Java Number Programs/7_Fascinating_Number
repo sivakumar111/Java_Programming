@@ -31,4 +31,46 @@ public class FascinatingNumber {
  *  The concat number :327654981
  *  The given number was a Fascinating Number
  */
- 
+                                                             
+
+
+                                                                            (Or)
+(with try catch Methods)
+
+import java.util.*;
+
+public class FascinatingNumber {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("Enter the number :");
+            int num = sc.nextInt();
+            String concat = ""; // Initialize with an empty string
+            concat = concat + (num * 1) + (num * 2) + (num * 3);
+            System.out.println("The concat number :" + concat);
+            for (int i = 1; i <= 9; i++) {
+                int count = 0;
+                for (int j = 0; j < concat.length(); j++) {
+                    if (Integer.parseInt(String.valueOf(concat.charAt(j))) == i) {
+                        count++;
+                    }
+                }
+                if (count != 1) {
+                    System.out.println("The given number was not a Fascinating Number");
+                    return;
+                }
+            }
+            System.out.println("The given number was a Fascinating Number");
+            sc.close();
+        } catch (NumberFormatException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+}
+
+/*Output:
+ * Enter the number :
+ *  327
+ *  The concat number :327654981
+ *  The given number was a Fascinating Number
+ */
