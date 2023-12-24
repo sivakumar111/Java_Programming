@@ -1,0 +1,42 @@
+//Peterson Number
+import java.util.*;
+public class PetersonNumber {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the numnber: ");
+        int num=sc.nextInt();
+        if(getIndividulaNumber(num)){
+            System.out.println("Enter the number was peterson number");
+        }else{
+            System.out.println("Enter the number was not peterson number");
+        }
+        sc.close();
+    }
+
+    private static boolean getIndividulaNumber(int num) {
+        int temp =num;
+        int ans=0;
+        while(num>0){
+            int rem = num%10;
+            ans=ans+Fact(rem);
+            num=num/10;
+        }
+        if(temp==ans){
+            return true;
+        }
+        return false;
+    }
+
+    private static int Fact(int rem) {
+        int fv =1;
+        for(int i=1; i<=rem; i++){
+            fv=fv*i;
+        }
+        return fv;
+    }
+}
+
+/*Output:
+ * Enter the numnber: 145
+ * Enter the number was peterson number  
+ */
