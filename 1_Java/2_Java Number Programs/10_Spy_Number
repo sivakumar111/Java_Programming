@@ -1,0 +1,42 @@
+//Spy Number
+import java.util.*;
+public class SpyNummber {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number :");
+        int num = sc.nextInt();
+        if(Sum(num)==Product(num)){
+            System.out.println("Number was SpyNumber");
+        }else{
+            System.out.println("Number was Not a SpyNumber");
+        }
+        sc.close();
+    }
+
+    public static int Product(int num) {
+        int temp=num;
+        int pro=1;
+        while(temp>0){
+            int rem = temp%10;
+            pro=pro*rem;
+            temp=temp/10;
+        }
+        return pro;
+    }
+
+    public static int Sum(int num) {
+        int temp = num;
+        int sum=0;
+        while(temp>0){
+            int rem = temp%10;
+            sum =sum+rem;
+            temp=temp/10;
+        }
+        return sum;
+    }   
+}
+
+/*OutPut
+ * Enter the number :132
+ * Number was SpyNumber
+ */
