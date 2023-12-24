@@ -1,0 +1,46 @@
+//Tech Number or not
+import java.util.Scanner;
+
+public class TechNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number: ");
+        int num = sc.nextInt();
+        logic(num);
+        sc.close();
+    }
+
+    public static void logic(int num) {
+        int temp = num;
+        int ans = digits(num);
+        if (ans%2==0) {
+            // Lasthalf
+            int Lasthalf = num % (int) Math.pow(10, ans / 2);
+            // Firsthalf
+            int Firsthalf = num / (int) Math.pow(10, ans / 2);
+
+            int sum = (Firsthalf + Lasthalf) * (Firsthalf + Lasthalf);
+
+            if (sum == temp) {
+                System.out.println("It is a Tech number");
+            } else {
+                System.out.println("Not a Tech number");
+            }
+        } else {
+            System.out.println("Not a Tech number");
+        }
+    }
+
+    private static int digits(int num) {
+        int count = 0;
+        while (num > 0) {
+            count++;
+            num = num / 10; 
+        }
+        return count;
+    }
+}
+/*Output
+ * Enter the number: 2025
+ * It is a Tech number
+ */
