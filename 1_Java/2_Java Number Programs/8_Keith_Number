@@ -1,0 +1,44 @@
+import java.util.*;
+public class keithNumber{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number :");
+        int num=sc.nextInt();
+        if(isKeit(num)){
+            System.out.println("The given number was Keit Number");
+        }else{
+            System.out.println("The given number was Not a Keit Number");
+        }
+        sc.close();
+    }
+
+    private static boolean isKeit(int num) {
+        ArrayList<Integer> term = new ArrayList<Integer>();
+        int temp =num, n=0;//n = Number of digits from a given number
+        while(temp>0){
+            term.add(temp%10);
+            n++;
+            temp=temp/10;
+        }
+
+        //To reverse a Array use a collection
+        Collections.reverse(term);
+
+        int next_term=0, i=n; //See this i=n
+        while(next_term<num){
+            next_term=0;
+            for(int j=1; j<=n; j++){
+                next_term=next_term+term.get(i-j);
+            }
+            term.add(next_term);
+            i++;
+        }
+
+        return (next_term==num);
+    }
+}
+
+/* Output:
+ * Enter the number :19
+ * The given number was Keit Number
+ */
