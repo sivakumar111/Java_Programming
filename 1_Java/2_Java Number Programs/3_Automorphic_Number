@@ -1,0 +1,31 @@
+//Automorphic Number
+import java.util.*;
+public class AutomorphicNumber {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number: ");
+        int num = sc.nextInt();
+        int Ans = SquareNumber(num);
+        if(logic(Ans, num)){
+            System.out.println("The Number was Automorphic Number");
+        }else{
+            System.out.println("The Number was Not Automorphic Number");
+        }
+        sc.close();
+    }
+
+    private static boolean logic(int Ans, int num) {
+        int a = Ans%100;
+        if(a==num){
+            return true;
+        }
+
+        return false;
+    }
+
+    private static int SquareNumber(int num) {
+        int z = num*num;
+        return z;
+    }
+
+}
