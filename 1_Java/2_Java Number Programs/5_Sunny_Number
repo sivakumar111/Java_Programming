@@ -1,0 +1,31 @@
+//Sunnay Number
+import java.util.*;
+public class SunnyNumber {
+   public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter the number :");
+    int num = sc.nextInt();
+    if(sunnynumber(num)){
+        System.out.println("Enter the number was Sunny Number");
+    }else{
+        System.out.println("The entered number was not  a Sunny Number");
+    }
+    sc.close();
+   } 
+
+   public static boolean sunnynumber(int num){
+    double sqr, d;
+    sqr=Math.sqrt(num+1);
+    d=sqr-Math.floor(sqr);
+    if(d==0.0){
+        return true;
+    }
+    return false;
+   }
+
+}
+
+/*Output:
+ * Enter the number :8
+ *Enter the number was Sunny Number
+ */
