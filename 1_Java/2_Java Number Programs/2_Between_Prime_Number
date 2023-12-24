@@ -1,0 +1,35 @@
+//Print numbers in between given number
+import java.util.*;
+
+public class PrimeBetween {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the starting number :");
+        int startnumber = sc.nextInt();
+        System.out.print("Enter the ending number :");
+        int endnumber = sc.nextInt();
+        logic(startnumber,endnumber);
+        sc.close();
+    }    
+    public static void logic(int startnumber, int endnumber){
+        for(int i=startnumber; i<=endnumber; i++){
+            int count=1;
+            for(int j=2; j<=i; j++){
+                if(i%j==0)
+                {
+                    count++;
+                }
+            }
+            if(count==2){
+                System.out.print(i+" ");
+            }
+        }
+    }
+}
+
+/*
+ * OutPut:
+ * Enter the starting number :2
+ *  Enter the ending number :10
+ *  2 3 5 7
+ */
