@@ -1,0 +1,57 @@
+import java.util.*;
+
+public class AutoBiographNumber {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number :");
+        int num = sc.nextInt();
+        //This method is used for convert a negative number to positive number
+        num = Math.abs(num);
+        int n = num;
+        String str = String.valueOf(num);//converting int to String
+        /*The String.valueOf() method in Java is used to convert any non-String variable or object to a newly created String object. It returns the string representation of the argument passed.
+         * // Convert an int to a string
+                String intToString = String.valueOf(10);
+
+                // Convert a double to a string
+                String doubleToString = String.valueOf(3.14);
+
+                // Convert a char to a string
+                String charToString = String.valueOf('A');
+
+                // Convert a boolean to a string
+                String booleanToString = String.valueOf(true);
+
+                // Convert an object to a string
+                String objectToString = String.valueOf(new Object());
+         */
+        int digitarray[]=new int[str.length()]; //Creating a array
+        System.out.println(digitarray.length);//Length of String
+        for(int i=digitarray.length-1; i>=0; i--){
+            digitarray[i]=n%10; //Assening the number to the array
+            n=n/10;//removeing the last digit
+        }
+
+        boolean flag=true;
+
+        for(int i=0; i<digitarray.length; i++){
+            int count=0;
+            for(int j=0; j<digitarray.length; j++){
+                if(i==digitarray[j]){
+                    count++;
+                }
+            }
+            if(count!=digitarray[i]){
+                flag=false;
+                break;
+            }
+        }
+
+        if(flag){
+            System.out.print("AutoBiographNumber");
+        }else{
+            System.out.print("Not a AutoBiographNumber");
+        }
+        sc.close();
+    }    
+}
