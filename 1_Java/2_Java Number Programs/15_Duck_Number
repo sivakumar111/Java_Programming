@@ -1,0 +1,30 @@
+import java.util.*;
+public class DuckNumber {
+    public static void main(String[] args){
+        Scanner sc = new Scanner (System.in);
+        System.out.print("Enter the Input Number :");
+        int num = sc.nextInt();
+        if(isDuck(num)){
+            System.out.print("The gven number was Duck Number");
+        }else{
+            System.out.print("The gven number was not a Duck Number");
+        }
+        sc.close();
+    }
+    public static boolean isDuck(int num){
+        int temp =num;
+        while(temp!=0){
+
+            if(temp%10==0){
+                return true;
+            }
+
+            temp=temp/10;
+        }
+        return false;
+    }
+}
+/*Output:
+ * Enter the Input Number :7033
+ * The gven number was Duck Number 
+ */
