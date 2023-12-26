@@ -1,0 +1,25 @@
+import java.util.*;
+public class BuzzNumber {
+    public static void main(String[] args){
+        Scanner sc = new Scanner (System.in);
+        System.out.print("Enter the Input Number :");
+        int num = sc.nextInt();
+        isBuzz(num);
+        sc.close();
+    }
+    public static void isBuzz(int num){
+        int temp = num;
+        int lastNum = temp%10;
+        if(lastNum==7 || num%7==0){
+            System.out.println("The given number was Buzz number");
+        }else{
+            System.out.println("The given number was not a Buzz number");
+        }
+    }
+}
+
+/*Output:
+ * Enter the Input Number :42
+ * The given number was Buzz number
+ */
+ 
