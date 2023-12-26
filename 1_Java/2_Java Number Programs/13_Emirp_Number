@@ -1,0 +1,55 @@
+//Emirp Number
+import java.util.*;
+public class EmirpNumber {
+    public static void main(String[] args){
+        Scanner sc = new Scanner (System.in);
+        System.out.print("Enter the Input Number :");
+        int num = sc.nextInt();
+        if(reverseNumber(num)==isPrime(num)){
+            System.out.println("The given number was Emirp Number");
+        }else{
+            System.out.println("The given number was not a Emirp Number");
+        }
+        sc.close();
+    }
+
+    public static boolean reverseNumber(int num) {
+        int temp = num;
+        int sum=0;
+        while(num>0){
+            int rem = num%10;
+            sum = (sum*10)+rem;
+            num = num/10;
+        }
+        
+            int count=0;
+                for(int i=1; i<=sum; i++){
+                    if(sum%i==0){
+                        count++;
+                    }
+                }
+
+                if(count==2){
+                    return true;
+                }
+
+                return false;
+    }
+
+    public static boolean isPrime(int num) {
+         if (num < 2) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+/*Output
+ * Enter the Input Number :79
+ * The given number was Emirp Number
+ */
