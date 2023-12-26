@@ -1,0 +1,35 @@
+import java.util.Scanner;
+class Evil {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number :");
+        int num = sc.nextInt();
+        String binary = "";
+
+        while (num > 0) {
+            int rem = num % 2;
+            binary = rem + binary;
+            num = num / 2;
+        }
+
+        int number = Integer.parseInt(binary);
+        int count=0;
+        while(number>0){
+            int rem = number%10;
+            if(rem==1){
+                count++;
+            }
+            number=number/10;
+        }
+        if(count%2==0){
+            System.out.println("It is Evil Number");
+        }else{
+            System.out.println("It is not a Evil number");
+        }
+    sc.close();
+    }
+}
+/*Output
+ * 16
+ * It is not a Evil number
+ */
