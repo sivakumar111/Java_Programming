@@ -32,3 +32,19 @@ public class Search_In_String {
  * Enter the Character :s
  * The Character was found in a given String
  */
+
+                                          (or)
+import java.util.*;
+public class Search_In_String {
+    public static void main(String[] args){
+        Scanner sc =new Scanner (System.in);
+        System.out.print("Enter the String :");
+        String name = sc.nextLine();
+        System.out.print("Enter the Character :");
+        char ch = sc.next().charAt(0);
+
+        //It will Show the position of the Character
+        int naa= name.indexOf(ch);
+        System.out.println("Index of the given array :"+naa);
+    }
+}
