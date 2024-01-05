@@ -5,7 +5,7 @@ public class Selection_Sorting{
         Sorting(arr);
         System.out.println(Arrays.toString(arr));
     }
-    public static void Sorting(int[] arr){
+    public static void Sorting(int[] arr){ //I kept it here method return type was void
         int size=arr.length;
         for(int i=0; i<arr.length; i++){
             int last=size-1-i;
@@ -14,7 +14,7 @@ public class Selection_Sorting{
         }
     }
 
-    public static void swap(int[] arr, int elementMax, int last) {
+    public static void swap(int[] arr, int elementMax, int last) {  //I kept it here method return type was void
         int temp=arr[elementMax];
         arr[elementMax]=arr[last];
         arr[last]=temp;
